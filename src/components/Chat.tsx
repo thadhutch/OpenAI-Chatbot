@@ -4,9 +4,11 @@ import {
   Accordion,
   AccordionItem,
   AccordionTrigger,
-} from "@radix-ui/react-accordion";
+  AccordionContent,
+} from "./ui/Accordion";
 import { FC } from "react";
 import ChatHeader from "./ChatHeader";
+import ChatInput from "./ChatInput";
 
 const Chat: FC = () => {
   return (
@@ -16,11 +18,17 @@ const Chat: FC = () => {
       className="relative bg-white z-40 shadow"
     >
       <AccordionItem value="item-1">
-        <div className="fixed right-8 w-80 bottom-8 bg-white border-gray-200 rounded-md overflow:hidden">
+        <div className="fixed right-8 w-80 bottom-8 bg-gray-800 border-gray-700 rounded-md overflow:hidden">
           <div className="w-full h-full flex flex-col">
             <AccordionTrigger className="px-6 py-4 border-b border-zinc-300">
               <ChatHeader />
             </AccordionTrigger>
+            <AccordionContent>
+              <div className="flex flex-col h-80">
+                message
+                <ChatInput className="px-4"/>
+              </div>
+            </AccordionContent>
           </div>
         </div>
       </AccordionItem>

@@ -5,8 +5,8 @@ import Chat from '../components/Chat'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Bookbuddy',
-  description: 'Your bookstore for fantasy & mystery novels',
+  title: 'Movieman',
+  description: 'Your website for all kinds of movies',
 }
 
 export default function RootLayout({
