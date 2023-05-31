@@ -6,7 +6,6 @@ import {
 } from "@/lib/openai-stream";
 import { chatbotPrompt } from "@/app/helpers/constants/chatbot-prompt";
 
-export const runtime = "edge";
 
 export async function POST(req: Request) {
   console.log("Request: ", req);
