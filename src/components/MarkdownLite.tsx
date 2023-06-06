@@ -18,9 +18,7 @@ const MarkdownLite: FC<MarkdownLiteProps> = ({ text }) => {
     const matchEnd = matchStart + fullMatch.length;
 
     if (lastIndex < matchStart) {
-      console.log("Parts: ", parts)
       parts.push(text.slice(lastIndex, matchStart));
-      console.log("Parts after lastIndex < matchStart: ", parts)
     }
 
     parts.push(
@@ -35,13 +33,11 @@ const MarkdownLite: FC<MarkdownLiteProps> = ({ text }) => {
       </Link>
     );
 
-    console.log("Parts after linkText: ", parts)
-
     lastIndex = matchEnd;
+  }
 
-    if (lastIndex < text.length) {
-      parts.push(text.slice(lastIndex));
-    }
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
   }
 
   return (

@@ -8,9 +8,10 @@ import { chatbotPrompt } from "@/app/helpers/constants/chatbot-prompt";
 
 
 export async function POST(req: Request) {
-  console.log("Request: ", req);
   const { messages } = await req.json();
-  console.log("Messages: ", messages);
+
+  throw new Error("test error");
+  
 
   const parsedMessages = MessageArraySchema.parse(messages);
 

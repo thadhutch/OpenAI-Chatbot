@@ -31,15 +31,15 @@ const ChatMessage: FC<ChatMessageProps> = ({ className, ...props }) => {
               className={cn(
                 "flex flex-col space-y-2 ext-sm max-w-xs mx-2 overflow-x-hidden",
                 {
-                  "bg-blue-600 text-white": message.isUserMessage,
-                  "bg-gray-200 text-gray-900": !message.isUserMessage,
+                  "order-1 items-start": message.isUserMessage,
+                  "order-2 items-end": !message.isUserMessage,
                 }
               )}
             >
               <p
-                className={cn("px-4 rounded-lg", {
+                className={cn("px-4 py-2 rounded-lg", {
                   "bg-blue-600 text-white": message.isUserMessage,
-                  "bg-gray-200 text-gray-900": !message.isUserMessage,
+                  "bg-gray-600 text-white": !message.isUserMessage,
                 })}
               >
                 <MarkdownLite text={message.text} />
@@ -48,7 +48,6 @@ const ChatMessage: FC<ChatMessageProps> = ({ className, ...props }) => {
           </div>
         </div>
       ))}
-      ChatMessage
     </div>
   );
 };
