@@ -10,9 +10,6 @@ import { chatbotPrompt } from "@/app/helpers/constants/chatbot-prompt";
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
-  throw new Error("test error");
-  
-
   const parsedMessages = MessageArraySchema.parse(messages);
 
   const outboundMessages: ChatGPTMessage[] = parsedMessages.map((message) => ({

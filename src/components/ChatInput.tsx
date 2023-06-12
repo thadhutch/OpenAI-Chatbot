@@ -35,7 +35,7 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
       });
 
       if (!response.ok) {
-        throw new Error("Something went wrong");
+        throw new Error();
       }
 
       return response.body;
